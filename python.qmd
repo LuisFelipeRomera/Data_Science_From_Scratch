@@ -1,0 +1,112 @@
+# A brief Python course
+___
+in this chapter, the author goes through a quick python couse.
+
+## Indentation
+
+Python uses **Indentation** to separate blocks of code.
+
+***Example***
+
+```{python}
+# The hashtag initiates a commentary
+
+for i in [1, 2, 3, 4, 5]:
+  print(i)
+  for j in [1, 2, 3, 4, 5]:
+    print(j)
+    print(i + j)
+  print(i)
+print("done looping")
+```
+
+Python ignores **spaces** when inside parentheses or brackets.
+
+```{python} 
+sum = [1 + 2 +3 + 4 + 5]
+
+sum
+```
+The **inverted bar** indicates that the code continues in the **next line**
+
+```{python} 
+sum = 2 + \
+3
+
+sum
+```
+
+## Functions
+
+**Functions** are defined by the terms **def** and **return**:
+
+```{python} 
+def double(x): #returns the double of the input
+    return x * 2
+double(2)
+
+```
+
+Python functions are *first class functions*, which means
+we can atribute them as **variables** and insert them in 
+other functions as **arguments**.
+
+```{python}
+def apply_to_one(f):
+  return f(1) #calls function f using 1 as argument
+
+my_double = double
+
+x = apply_to_one(my_double) #calls double(1)
+x
+```
+
+There are also the *Lambda* functions:
+
+```{python}
+y = apply_to_one(lambda x: x + 4)
+y
+```
+
+
+```{python}
+another_double = lambda x: x * 2
+another_double(2)
+```
+Function parameters can also receive **default parameters**
+in case of absent argument:
+
+```{python}
+def my_print(message = "default message"):
+    print(message)
+
+my_print()
+```
+
+```{python}
+my_print("hello world")
+```
+```
+```
+
+Functions may also receive **multiple default parameters**:
+
+
+```{python}
+def name(first = "fulano", last = "de tal"):
+  return first + " " + last
+
+name()
+```
+
+```{python}
+name("Luís")
+
+```
+```{python}
+name(last = "Romera")
+```
+```{python}
+
+name("Luís", "Romera")
+```
